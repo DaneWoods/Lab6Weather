@@ -35,7 +35,8 @@ class App extends Component{
             .then(response => response.json())
             .then(data => {
                 console.log(data);
-                const simpleForecast = this.parseForecast(forecast);
+                const timezoneOffset = (data.rawOffset + data.dstOffset) / (60 * 60);
+                const simpleForecast = this.parseForecast(forecast, timezoneOffset);
                 zipcode = ""; 
                 this.setState({zipcode, city, forecast, simpleForecast, selectedDate: null});         
             })

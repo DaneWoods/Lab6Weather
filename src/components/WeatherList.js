@@ -20,7 +20,7 @@ class WeatherList extends Component{
                     forecastDay={forecastDay}
                     index={index}
                 />
-            ) }
+            )}
         </div>
     );
   }
